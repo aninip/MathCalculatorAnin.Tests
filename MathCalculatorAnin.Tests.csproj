@@ -26,4 +26,8 @@
     <Folder Include="Parsers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MathСalculatorAnin\MathСalculatorAnin.csproj" />
+  </ItemGroup>
+
 </Project>
