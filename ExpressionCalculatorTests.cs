@@ -127,7 +127,7 @@ namespace MathCalculatorAnin.Tests
         }
 
         [Fact]
-        public void Tokenize_DecimalNumbers_ReturnsCorrectTokens()
+        public void Tokenize_DecimalNumbers()
         {
             var parser = new ExpressionParser();
             var expression = "5.5 + 2.3";
@@ -139,7 +139,7 @@ namespace MathCalculatorAnin.Tests
             Assert.Equal(new List<string> { "5,5", "+", "2,3" }, tokens);
         }
         [Fact]
-        public void Tokenize_ComplexExpression_ReturnsCorrectTokens()
+        public void Tokenize_ComplexExpression()
         {
             // Arrange
             var parser = new ExpressionParser();
