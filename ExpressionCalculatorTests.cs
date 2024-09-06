@@ -156,5 +156,67 @@ namespace MathCalculatorAnin.Tests
 
             Assert.Equal(expectedTokens, tokens);
         }
+        [Fact]
+        public void Calculate_PowerOfPositiveNumbers()
+        {
+            var calculator = new ExpressionCalculator();
+            var expression = new List<string> { "2", "^", "3" };
+            double result = calculator.Calculate(expression);
+            Assert.Equal(8, result);
+        }
+        [Fact]
+        public void Calculate_PowerOfZeroExponent()
+        {
+            // Arrange
+            var calculator = new ExpressionCalculator();
+            var expression = new List<string> { "5", "^", "0" };
+
+            // Act
+            var result = calculator.Calculate(expression);
+
+            // Assert
+            Assert.Equal(1, result);
+        }
+        [Fact]
+        public void Calculate_PowerOfNegativeExponent()
+        {
+            // Arrange
+            var calculator = new ExpressionCalculator();
+            var expression = new List<string> { "2", "^", "-2" };
+
+            // Act
+            var result = calculator.Calculate(expression);
+
+            // Assert
+            Assert.Equal(0.25, result, 2);
+        }
+        [Fact]
+        public void Calculate_NegativeBasePower()
+        {
+            // Arrange
+            var calculator = new ExpressionCalculator();
+            var expression = new List<string> { "-2", "^", "3" };
+
+            // Act
+            var result = calculator.Calculate(expression);
+
+            // Assert
+            Assert.Equal(-8, result);
+        }
+        [Fact]
+        public void Calculate_ZeroBasePower()
+        {
+            // Arrange
+            var calculator = new ExpressionCalculator();
+            var expression = new List<string> { "0", "^", "5" };
+
+            // Act
+            var result = calculator.Calculate(expression);
+
+            // Assert
+            Assert.Equal(0, result);
+        }
+
+
     }
 }
